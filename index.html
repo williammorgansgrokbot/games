@@ -9,8 +9,8 @@ header{text-align:center;padding:calc(28px + env(safe-area-inset-top)) 20px 12px
 h1{margin:4px 0 6px;font-size:40px;line-height:1;font-weight:900;letter-spacing:.02em;text-transform:uppercase}
 .sub{color:var(--sil2);margin:0;font-size:16px}
 .rule{height:4px;width:120px;margin:16px auto 0;border-radius:4px;background:linear-gradient(90deg,var(--silver),#fff,var(--silver))}
-main{max-width:1100px;margin:0 auto;padding:16px;display:grid;gap:18px;grid-template-columns:1fr}
-@media(min-width:720px){main{grid-template-columns:repeat(2,1fr)}}@media(min-width:1040px){main{grid-template-columns:repeat(3,1fr)}}
+main{max-width:1100px;margin:0 auto;padding:16px;display:flex;flex-wrap:wrap;justify-content:center;gap:18px}.card{flex:0 0 100%}
+@media(min-width:720px){.card{flex-basis:calc((100% - 18px)/2)}}@media(min-width:1040px){.card{flex-basis:calc((100% - 36px)/3)}}
 .card{display:block;text-decoration:none;color:inherit;background:linear-gradient(180deg,var(--navy2),#06244d);border:2px solid rgba(196,204,208,.35);
 border-radius:26px;overflow:hidden;box-shadow:0 10px 24px rgba(0,0,0,.35);transition:transform .15s}
 .card:active{transform:scale(.98)}@media(hover:hover){.card:hover{transform:translateY(-3px);border-color:var(--sil2)}}
@@ -40,9 +40,11 @@ footer{text-align:center;color:var(--silver);font-size:14px;padding:24px 16px ca
 <div class="shot"><img src="img/family-spades.webp" alt="Family Spades screenshot" loading="lazy"></div>
 <div class="body"><span class="tag">2 teams of 2</span><h2>Family Spades</h2><p>Bid your tricks with your partner — spades are trump!</p><span class="btn">Play ▶</span></div></a><a class="card" href="https://williammorgansgrokbot.github.io/family-hearts/">
 <div class="shot"><img src="img/family-hearts.webp" alt="Family Hearts screenshot" loading="lazy"></div>
-<div class="body"><span class="tag">Solo vs computer or online</span><h2>Family Hearts</h2><p>Dodge the hearts, duck the Queen — lowest score wins.</p><span class="btn">Play ▶</span></div></a><a class="card" href="https://williammorgansgrokbot.github.io/jonah-game/">
-<div class="shot"><img src="img/jonah-game.webp" alt="Jonah's Journey screenshot" loading="lazy"></div>
-<div class="body"><span class="tag">Landscape · Kids</span><h2>Jonah's Journey</h2><p>Run, storm, pray, mercy — an adventure with Jonah and the whale.</p><span class="btn">Play ▶</span></div></a><a class="card" href="https://williammorgansgrokbot.github.io/reel-legends/">
+<div class="body"><span class="tag">Solo vs computer or online</span><h2>Family Hearts</h2><p>Dodge the hearts, duck the Queen — lowest score wins.</p><span class="btn">Play ▶</span></div></a><a class="card" href="https://williammorgansgrokbot.github.io/noah-big-boat/">
+<div class="shot"><img src="img/noah-big-boat.webp" alt="Noah's Big Boat screenshot" loading="lazy"></div>
+<div class="body"><span class="tag">Landscape · Kids · Bible</span><h2>Noah's Big Boat</h2><p>Build the ark, gather the animals, and float through the flood.</p><span class="btn">Play ▶</span></div></a><a class="card" href="https://williammorgansgrokbot.github.io/david-and-the-giant/">
+<div class="shot"><img src="img/david-and-the-giant.webp" alt="David &amp; the Giant screenshot" loading="lazy"></div>
+<div class="body"><span class="tag">Landscape · Kids · Bible</span><h2>David &amp; the Giant</h2><p>Watch, carry, choose, trust — help young David face Goliath.</p><span class="btn">Play ▶</span></div></a><a class="card" href="https://williammorgansgrokbot.github.io/reel-legends/">
 <div class="shot"><img src="img/reel-legends.webp" alt="Reel Legends screenshot" loading="lazy"></div>
 <div class="body"><span class="tag">Landscape · Fishing</span><h2>Reel Legends</h2><p>Cast your line and reel in 18 legendary fish.</p><span class="btn">Play ▶</span></div></a><a class="card" href="https://williammorgansgrokbot.github.io/diner-match/">
 <div class="shot"><img src="img/diner-match.webp" alt="Diner Match screenshot" loading="lazy"></div>
