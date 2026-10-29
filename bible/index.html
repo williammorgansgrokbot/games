@@ -1,0 +1,82 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Bible Adventure Games</title><meta name="theme-color" content="#f6b25a"><style>
+:root{--wood:#7a4520;--wood2:#a8642c;--gold:#ffd25e;--gold2:#f39a1e;--cream:#fff6e3;--ink:#4a2a12}
+*{box-sizing:border-box}html{background:#f3a85a}
+body{margin:0;font-family:"Baloo 2","Fredoka","Nunito","Trebuchet MS",system-ui,sans-serif;color:var(--ink);min-height:100vh;position:relative;overflow-x:hidden;isolation:isolate;
+background:linear-gradient(180deg,#5b8fd6 0%,#8fb8ea 14%,#f7c98a 34%,#f6a85c 52%,#e98a4a 70%,#c9703c 100%)}
+.scene{position:absolute;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
+.scene svg{position:absolute;left:0;width:100%}
+.sun{position:absolute;left:50%;top:22vh;width:900px;height:900px;margin:-450px 0 0 -450px;border-radius:50%;
+background:repeating-conic-gradient(from 0deg,rgba(255,240,190,.32) 0 6deg,rgba(255,240,190,0) 6deg 15deg);
+-webkit-mask:radial-gradient(circle,#000 0 20%,transparent 68%);mask:radial-gradient(circle,#000 0 20%,transparent 68%);animation:spin 120s linear infinite}
+.sun::after{content:"";position:absolute;left:50%;top:50%;width:150px;height:150px;margin:-75px;border-radius:50%;
+background:radial-gradient(circle,#fffbe8 0 35%,#ffe28a 55%,rgba(255,210,120,0) 72%);box-shadow:0 0 120px 60px rgba(255,226,150,.55)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.rainbow{position:absolute;left:50%;top:30vh;width:1300px;height:1300px;margin-left:-650px;border-radius:50%;opacity:.28;
+background:radial-gradient(circle,transparent 0 56%,#ff5e5e 56% 57.5%,#ffa53b 57.5% 59%,#ffe15a 59% 60.5%,#6fd36a 60.5% 62%,#58a8ff 62% 63.5%,#8a6cff 63.5% 65%,transparent 65%)}
+.star{position:absolute;color:#fff7d6;text-shadow:0 0 8px #fff3b0;animation:tw 3s ease-in-out infinite;font-size:14px}
+@keyframes tw{50%{opacity:.25}}
+.cloud{position:absolute;width:200px;height:56px;background:#fff;border-radius:60px;opacity:.85;filter:drop-shadow(0 6px 8px rgba(160,90,40,.18));animation:drift 70s linear infinite}
+.cloud::before,.cloud::after{content:"";position:absolute;background:#fff;border-radius:50%}
+.cloud::before{width:90px;height:90px;left:28px;top:-42px}.cloud::after{width:66px;height:66px;left:100px;top:-28px}
+@keyframes drift{from{transform:translateX(-30vw)}to{transform:translateX(130vw)}}
+header{text-align:center;padding:calc(30px + env(safe-area-inset-top)) 18px 6px}
+.back{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:0 18px;border-radius:999px;background:rgba(255,246,227,.85);
+color:var(--wood);font-weight:800;text-decoration:none;font-size:15px;border:2px solid #e2b06a;box-shadow:0 3px 0 #c98a3e}
+h1{margin:18px 0 4px;font-size:44px;line-height:1.02;font-weight:900;letter-spacing:.01em;
+background:linear-gradient(180deg,#fff3b0 0%,#ffd25e 45%,#f39a1e 100%);-webkit-background-clip:text;background-clip:text;color:transparent;
+-webkit-text-stroke:2px #6b3510;filter:drop-shadow(0 4px 0 #5a2c0c) drop-shadow(0 8px 14px rgba(90,44,12,.35))}
+.ribbon{display:inline-block;margin-top:8px;padding:8px 18px;border-radius:999px;background:linear-gradient(180deg,#8a4c22,#6b3510);color:#ffe7a8;
+font-weight:800;letter-spacing:.14em;font-size:13px;text-transform:uppercase;border:2px solid #d79a4a}
+.verse{max-width:520px;margin:16px auto 0;padding:14px 18px;border-radius:22px;background:rgba(255,246,227,.82);border:2px solid #e9c07c;
+font-family:Georgia,"Noto Serif",serif;font-style:italic;font-size:17px;line-height:1.4;color:#5a3414;box-shadow:0 6px 16px rgba(120,60,20,.18)}
+.verse b{display:block;font-style:normal;font-family:inherit;font-size:13px;letter-spacing:.12em;margin-top:6px;color:#9a5a24}
+main{max-width:1180px;margin:0 auto;padding:22px 16px 10px;display:flex;flex-wrap:wrap;justify-content:center;gap:22px}
+.card{flex:0 0 100%;display:block;text-decoration:none;color:inherit;border-radius:30px;overflow:hidden;background:var(--cream);
+border:4px solid #c98a3e;box-shadow:0 7px 0 #8a4c22,0 16px 30px rgba(90,44,12,.35);transition:transform .15s}
+@media(min-width:720px){.card{flex-basis:calc((100% - 22px)/2)}}@media(min-width:1100px){.card{flex-basis:calc((100% - 44px)/3)}}
+.card:active{transform:translateY(4px);box-shadow:0 3px 0 #8a4c22,0 8px 16px rgba(90,44,12,.3)}
+@media(hover:hover){.card:hover{transform:translateY(-4px) rotate(-.4deg)}}
+.shot{position:relative;aspect-ratio:844/390;background:#f6c27a;border-bottom:4px solid #c98a3e}
+.shot img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
+.ref{position:absolute;left:12px;bottom:10px;padding:5px 12px;border-radius:999px;background:rgba(107,53,16,.88);color:#ffe7a8;font-weight:800;font-size:13px;letter-spacing:.05em}
+.body{padding:14px 18px 20px;background:linear-gradient(180deg,#fff9ec,#fde9c4)}
+h2{margin:0;font-size:28px;font-weight:900;color:#6b3510;line-height:1.1}
+.motto{margin:4px 0 8px;font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#c06d1e}
+p{margin:0 0 16px;font-size:16px;line-height:1.4;color:#5a3a20}
+.btn{display:block;text-align:center;min-height:60px;line-height:60px;border-radius:999px;font-weight:900;font-size:24px;letter-spacing:.03em;
+color:#fff5d0;text-shadow:0 2px 0 #6b3510;background:linear-gradient(180deg,#c47a3a,#8a4c22);border:3px solid #f2c26b;box-shadow:inset 0 2px 0 rgba(255,255,255,.35),0 5px 0 #5a2c0c}
+footer{text-align:center;padding:26px 16px calc(34px + env(safe-area-inset-bottom));color:#fff4d8;font-weight:700;text-shadow:0 2px 4px rgba(90,44,12,.5)}
+footer a{color:#fff4d8}
+@media(prefers-reduced-motion:reduce){.sun,.cloud,.star{animation:none}}
+</style></head><body>
+<div class="scene" aria-hidden="true">
+<div class="rainbow"></div><div class="sun"></div>
+<span class="star" style="left:8%;top:4%">✦</span><span class="star" style="left:22%;top:9%;animation-delay:1s">✧</span><span class="star" style="left:78%;top:5%;animation-delay:.5s">✦</span><span class="star" style="left:90%;top:12%;animation-delay:2s">✧</span><span class="star" style="left:60%;top:3%;animation-delay:1.5s">✦</span>
+<div class="cloud" style="top:14%;animation-duration:80s;animation-delay:-20s"></div>
+<div class="cloud" style="top:26%;transform:scale(.7);animation-duration:110s;animation-delay:-70s"></div>
+<div class="cloud" style="top:8%;animation-duration:95s;animation-delay:-55s;opacity:.7"></div>
+<svg viewBox="0 0 1440 400" preserveAspectRatio="none" style="bottom:0;height:520px">
+<path d="M0 230 L170 120 L280 230Z M1080 230 L1220 95 L1360 230Z" fill="#e2a25c" opacity=".7"/>
+<path d="M1220 95 L1360 230 L1260 230Z" fill="#c9823f" opacity=".7"/>
+<path d="M0 220 C180 160 340 200 520 180 S900 150 1080 190 S1340 170 1440 180 V400 H0Z" fill="#d9a35a"/>
+<path d="M0 270 C200 220 420 280 640 250 S1040 210 1240 250 S1400 240 1440 245 V400 H0Z" fill="#9db558"/>
+<path d="M0 320 C240 280 480 330 720 305 S1160 280 1440 310 V400 H0Z" fill="#6f9a46"/>
+<path d="M0 355 C120 340 240 365 360 352 S600 340 720 355 S960 370 1080 352 S1320 340 1440 356 V400 H0Z" fill="#3f8fc4" opacity=".9"/>
+<path d="M0 372 C120 360 240 382 360 372 S600 360 720 374 S960 388 1080 372 S1320 362 1440 374 V400 H0Z" fill="#2f74a8"/>
+</svg></div>
+<header><a class="back" href="https://williammorgansgrokbot.github.io/games/">← All Family Games</a>
+<h1>Bible Adventure<br>Games</h1><div class="ribbon">Stories of faith · Play &amp; learn</div>
+<div class="verse">“Declare his glory among the heathen, his wonders among all people.”<b>PSALM 96:3 · KJV</b></div></header>
+<main><a class="card" href="https://williammorgansgrokbot.github.io/noah-big-boat/">
+<div class="shot"><img src="../img/noah-big-boat.webp" alt="Noah's Big Boat title screen" loading="lazy"><span class="ref">Genesis 6–9</span></div>
+<div class="body"><h2>Noah's Big Boat</h2><div class="motto">Build · Gather · Float · Fly</div><p>Build the ark, gather the animals two by two, and float safe through the flood.</p><span class="btn">▶ Play</span></div></a><a class="card" href="https://williammorgansgrokbot.github.io/david-and-the-giant/">
+<div class="shot"><img src="../img/david-and-the-giant.webp" alt="David &amp; the Giant title screen" loading="lazy"><span class="ref">1 Samuel 17</span></div>
+<div class="body"><h2>David &amp; the Giant</h2><div class="motto">Watch · Carry · Choose · Trust</div><p>Help young David tend his sheep, choose five smooth stones, and trust God against Goliath.</p><span class="btn">▶ Play</span></div></a><a class="card" href="https://williammorgansgrokbot.github.io/jonah-game/">
+<div class="shot"><img src="../img/jonah-game.webp" alt="Jonah's Journey title screen" loading="lazy"><span class="ref">Book of Jonah</span></div>
+<div class="body"><h2>Jonah's Journey</h2><div class="motto">Run · Sail · Pray · Preach</div><p>Run from Nineveh, ride out the storm, pray in the whale, and discover God's mercy.</p><span class="btn">▶ Play</span></div></a><a class="card" href="https://williammorgansgrokbot.github.io/joseph-big-dream/">
+<div class="shot"><img src="../img/joseph-big-dream.webp" alt="Joseph's Big Dream title screen" loading="lazy"><span class="ref">Genesis 37–50</span></div>
+<div class="body"><h2>Joseph's Big Dream</h2><div class="motto">Stitch · Climb · Match · Share</div><p>From a coat of many colors to Pharaoh's palace — follow Joseph's big dream.</p><span class="btn">▶ Play</span></div></a><a class="card" href="https://williammorgansgrokbot.github.io/bible-verse-builder/">
+<div class="shot"><img src="../img/bible-verse-builder.webp" alt="Bible Verse Builder title screen" loading="lazy"><span class="ref">Verses</span></div>
+<div class="body"><h2>Bible Verse Builder</h2><div class="motto">Read · Tap · Build · Learn</div><p>Tap the words in order to build favorite verses from John, Psalms, Proverbs and more.</p><span class="btn">▶ Play</span></div></a></main>
+<footer>Made with love · <a href="https://williammorgansgrokbot.github.io/games/">Back to all games</a></footer></body></html>
